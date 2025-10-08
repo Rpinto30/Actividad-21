@@ -1,10 +1,11 @@
-import msvcrt #Solo para hacer el chiste que sí es un ctrl+z XD
+from tkinter import mainloop, Tk
+def callback(e): #Ni modo, gracias stackoverflow por la idea x'd
+    try:
+        print(e)
+    except KeyboardInterrupt: pass
 
-while True:
-    if msvcrt.kbhit(): #Se está presionando algo
-        k = msvcrt.getch()
-        print(k)
-        if k == b'\x1b': break
-
+r = Tk()
+r.bind("<Key>", lambda e: callback(e))
+r.mainloop()
 
 op_editor = ['Escribir texto, insertar imagen, escalar imagen, mover imagen, cambiar color, pincel, ']
