@@ -15,3 +15,4 @@ while True:
             else: print("\nNo hay clientes! ¿Es bueno o malo?\n")
         case '3': break
         case _: pass
+
