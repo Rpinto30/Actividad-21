@@ -4,15 +4,20 @@ def callback(e): #Ni modo, gracias stackoverflow por la idea x'd
     key = e.keysym
 def on_press():
     global key
-    print(key)
-    try:
-        if key == 'Escape': raise KeyboardInterrupt()
-    except KeyboardInterrupt:
-        print('Adios!')
-        r.destroy()
+    if key:
+        print(key)
+        try:
+            if key == 'Escape': raise KeyboardInterrupt()
+            elif key == 'Control_L':
+                if key == 'z': print('zasdasd')
+        except KeyboardInterrupt:
+            print('Adios!')
+            r.destroy()
+    r.after(100, on_press) # Como si fuese recursión, la llamo a sí misma
 
 r = Tk()
 key = ''
+keys = [] #Cola de teclas (quize agregarlo)
 r.bind("<Key>", lambda e: callback(e))
 on_press()
 r.mainloop()
