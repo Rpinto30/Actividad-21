@@ -6,9 +6,9 @@ def valid_expression(expression) -> bool:
         for i in expression:
             if i == '(': queue_.append('(')
             elif i == ')': queue_.pop()
-            print(queue_)
         if len(queue_) == 0: return True
         else: return  False
     except IndexError: return False
 
-print(valid_expression(t))
+if valid_expression(t): print(f' 😀 La opereación {t} es \u001b[1mcorrecta!\u001b[0m')
+else: print(f' 😞 Verifica tus paréntesis en la operación {t}')
