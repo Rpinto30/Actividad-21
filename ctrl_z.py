@@ -22,5 +22,4 @@ r.bind("<Key>", lambda e: callback(e))
 on_press()
 r.mainloop()
 
-
 op_editor = ['Escribir texto, insertar imagen, escalar imagen, mover imagen, cambiar color, pincel, ']
