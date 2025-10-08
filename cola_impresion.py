@@ -15,12 +15,19 @@ while True:
                 print("*"*50)
                 start = time()
                 u = queue_.popleft()
-                for i in range(randint(3,7)):
+
+                print(f"Mandando a imprimir: {u}")
+                print(f"En cola de impresión:")
+                for n, i in enumerate(queue_,1): print(f"\t{n}) {i}")
+                sleep(2.5)
+                print()
+                for i in range(randint(2,5)):
                     t = f"Imprimiendo {u}"
                     for j in range(4):
                         print(t+"."*j)
-                        sleep(0.5)
+                        sleep(0.2)
                     print()
+                    sleep(1)
                 print(f"\nSe ha impreso {u}!\n")
             else: print("\nNada en cola de impresión\n")
         case '3': break
